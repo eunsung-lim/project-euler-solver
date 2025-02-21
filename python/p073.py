@@ -1,11 +1,11 @@
-from base import get_prime_factors
+from base import prime_factors
 
 ans = 0
 N = 12000
 
 for d in range(4, N+1):
     relative = [True] * (d+1)
-    for p in get_prime_factors(d):
+    for p in prime_factors(d):
         for i in range(p, d//2+1, p):
             relative[i] = False
 
