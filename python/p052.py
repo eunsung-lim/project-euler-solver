@@ -5,5 +5,3 @@ while True:
         print(n)
         break
     n += 1
-
-# 142857

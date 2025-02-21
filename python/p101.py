@@ -16,4 +16,3 @@ def op(k):
     return g
 
 print(sum(round(op(i)(i+1)) for i in range(1, 11)))
-# 37076114526

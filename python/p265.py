@@ -19,4 +19,3 @@ def f(s, t):
 
 f(s0, {s0})
 print(sum(int(x, 2) for x in ans))
-# 209110240768

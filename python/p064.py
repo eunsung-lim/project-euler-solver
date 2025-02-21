@@ -34,4 +34,3 @@ for n in range(2, 10001):
         ans += 1
 
 print(ans)
-# 1322

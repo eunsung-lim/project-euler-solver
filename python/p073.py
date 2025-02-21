@@ -14,4 +14,3 @@ for d in range(4, N+1):
             ans += 1
 
 print(ans)
-# 729537
