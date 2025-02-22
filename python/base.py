@@ -1,8 +1,34 @@
 from functools import reduce
+from math import gcd
+
 
 def is_square(n):
     return int(n**0.5)**2 == n
 
+def totient(n):
+    for p in prime_factors(n):
+        n *= p-1
+        n //= p
+    return n
+
+def mobius(n):
+    if n == 1:
+        return 1
+    pf = prime_factors(n)
+    if n == reduce(lambda x, y: x*y, pf):
+        return int((-1)**len(pf))
+    return 0
+
+# https://en.wikipedia.org/wiki/Totient_summatory_function
+def totient_summatory(n):
+    return sum(totient(i) for i in range(1, n+1))
+
+def totient_summatory_fast(n):
+    return sum(mobius(i) * (n//i) * (1+(n//i)) // 2 for i in range(1, n+1))
+
+
+def is_coprime(a, b):
+    return gcd(a, b) == 1
 
 def is_palindrome(n):
     return str(n) == str(n)[::-1]
